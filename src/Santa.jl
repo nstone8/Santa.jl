@@ -20,6 +20,8 @@ santa(["Billy", "Susan", "Joan", "Jeremy"], #who is participating
 ```
 """
 function santa(participants,disallowed=[])
+    #make sure all entries in participants is unique
+    @assert (length(participants) == length(Set(participants))) "All participants must be unique"
     #Do a sanity check that everyone in a disallowed group is
     #in participants
     for group in disallowed
